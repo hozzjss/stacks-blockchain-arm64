@@ -197,14 +197,15 @@ check_flags() {
 #     - Confirm if user really wants to run this on an M1
 check_device() {
 	# Check if we're on a M1 Mac - Disk IO is not ideal on this platform
-	if [[ $(uname -m) == "arm64" ]]; then
-		echo
-		log_warn "⚠️  ${COLYELLOW}WARNING${COLRESET}"
-		log_warn "⚠️  MacOS M1 CPU detected - NOT recommended for this repo"
-		log_warn "⚠️  see README for details"
-		log_warn "⚠️      https://github.com/stacks-network/stacks-blockchain-docker#macos-with-an-m1-processor-is-not-recommended-for-this-repo"
-		confirm "Continue Anyway?" || exit_error "${COLRED}Exiting${COLRESET}"
-	fi
+#	if [[ $(uname -m) == "arm64" ]]; then
+#		echo
+#		log_warn "⚠️  ${COLYELLOW}WARNING${COLRESET}"
+#		log_warn "⚠️  MacOS M1 CPU detected - NOT recommended for this repo"
+#		log_warn "⚠️  see README for details"
+#		log_warn "⚠️      https://github.com/stacks-network/stacks-blockchain-docker#macos-with-an-m1-processor-is-not-recommended-for-this-repo"
+#		confirm "Continue Anyway?" || exit_error "${COLRED}Exiting${COLRESET}"
+#	fi
+echo ""
 }
 
 # Try to detect a breaking (major version change) in the API by comparing local version to .env definition

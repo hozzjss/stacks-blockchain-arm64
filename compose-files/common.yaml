@@ -14,7 +14,7 @@ services:
       - event-replay
       - stacks-blockchain
   stacks-blockchain:
-    image: hz2700/stacks-blockchain-arm64:latest
+    image: hz2700/stacks-blockchain:latest
     container_name: stacks-blockchain
     restart: on-failure
     ports:
@@ -36,7 +36,7 @@ services:
         "/src/stacks-blockchain/Config.toml",
       ]
   stacks-blockchain-api:
-    image: hz2700/stacks-blockchain-api-arm64:${STACKS_BLOCKCHAIN_API_VERSION:-latest}
+    image: hz2700/stacks-blockchain-api:${STACKS_BLOCKCHAIN_API_VERSION:-latest}
     container_name: stacks-blockchain-api
     restart: always
     ports:
